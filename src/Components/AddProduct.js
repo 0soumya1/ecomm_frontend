@@ -7,6 +7,9 @@ const AddProduct = () => {
   const [company, setCompany] = useState("");
   const [error, setError] = useState(false);
 
+  const url = "https://ecomm-backend-mocha.vercel.app/"
+  // const url = "http://localhost:5000/"
+
   const addProduct = async () => {
     
     console.log(!name);
@@ -36,7 +39,7 @@ const AddProduct = () => {
       userID: userData._id,
     };
 
-    let result = await fetch("http://localhost:5000/add-product", {
+    let result = await fetch(url+"add-product", {
       method: "post",
       body: JSON.stringify(data),
       headers: {

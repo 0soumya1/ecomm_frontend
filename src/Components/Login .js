@@ -6,6 +6,9 @@ const Login = ()=>{
     const [password, setPassword] = useState("");
     const navigate = useNavigate();
 
+    const url = "https://ecomm-backend-mocha.vercel.app/"
+  // const url = "http://localhost:5000/"
+
     useEffect(()=>{
          const auth = localStorage.getItem('user');
          if(auth){
@@ -15,7 +18,7 @@ const Login = ()=>{
 
     const handleLogin = async ()=>{
         console.log("email, password", email, password);
-        let result = await fetch("http://localhost:5000/login",{
+        let result = await fetch(url+"login",{
             method:'post',
             body:JSON.stringify({email,password}),
             headers:{
